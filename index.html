@@ -74,7 +74,6 @@
         });
 
         socket.on('message', function (msg) {
-
             console.log(msg);
             let message = document.createElement('div');
             message.className = 'message';
@@ -113,7 +112,7 @@
                 }, 10000);
             }
 
-            /*else if (msg.includes("하이")) {
+            else if (msg.includes("하이")) {
                 let img = document.createElement('img')
                 img.src = 'https://rhythmlogger.github.io/img/안녕하세요.gif';
                 $('div#messages').append(img);
@@ -131,11 +130,15 @@
                     let bottom = document.getElementById('bottom');
                     bottom.focus();
                 }, 10000);
-            } */else {
+            } else {
                 message.innerHTML = msg;
-                //$('div#messages').append(message);
+                $('div#messages').append(message);
+                setTimeout(function () {
+                    message.remove();
+                    let bottom = document.getElementById('bottom');
+                    bottom.focus();
+                }, 10000);
 
-                //
                 const http = new XMLHttpRequest();
                 const url = 'http://127.0.0.1:5000/translate?text=' + msg;
 
@@ -156,7 +159,7 @@
                         }, 10000);
                     }
                 };
-                //
+
 
             }
         });

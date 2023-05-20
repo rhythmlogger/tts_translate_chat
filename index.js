@@ -1,4 +1,4 @@
-
+// const translate = require('translate-google-api');
 const fs = require('fs');
 const tmi = require('tmi.js');
 var express = require('express');
