@@ -17,7 +17,7 @@ folder = path.resolve(__dirname) + '\\log\\';
 
 // tmi.js load
 const client = new tmi.Client({
-    channels: ['32comma'] //<-- channel name
+    channels: ['rlogger'] //<-- channel name
 });
 
 //channel connect
